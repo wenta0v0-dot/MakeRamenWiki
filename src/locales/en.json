@@ -167,8 +167,38 @@
       "badge": "Fan-made wiki",
       "title": "Make Ramen To Get Rich Codes",
       "description": "Every Make Ramen To Get Rich code checked against the official channels, plus beginner guides for the cook, record, and rich-mukbang loop.",
+      "image": "/images/game/shot-4.webp",
+      "videoId": "xg6rHrxEBpc",
+      "videoTitle": "Community gameplay tour of the spicy ramen kitchen (not an official trailer)",
       "ctaPrimary": "Play now",
       "ctaSecondary": "Browse guides"
+    },
+    "gallery": {
+      "badge": "Official screenshots",
+      "title": "Inside the game",
+      "description": "Developer-captured art from the official Roblox game page. Gameplay videos below show the full loop in motion.",
+      "items": [
+        {
+          "title": "Rooftop slurp at sunset",
+          "image": "/images/game/shot-2.webp",
+          "alt": "A player character eating a giant bowl of ramen by an ocean-view window at sunset"
+        },
+        {
+          "title": "Mukbang Edition noodles",
+          "image": "/images/game/shot-1.webp",
+          "alt": "A pink Make Ramen To Get Rich Mukbang Edition noodle pack beside a pan of cooked ramen"
+        },
+        {
+          "title": "Smoothie bowl and cream rolls",
+          "image": "/images/game/shot-5.webp",
+          "alt": "A colorful creamy smoothie bowl topped with fruit and ice cream rolls"
+        },
+        {
+          "title": "From pack to pot",
+          "image": "/images/game/shot-3.webp",
+          "alt": "A Make Ramen To Get Rich noodle pack next to a pot of boiling water"
+        }
+      ]
     },
     "start": {
       "badge": "Quick start",
@@ -236,6 +266,27 @@
             {
               "label": "3",
               "detail": "Grow the mukbang persona and get rich"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "name": "Gameplay videos",
+          "description": "Community gameplay of the cook, record, mukbang loop",
+          "href": "/guides/beginner-guide/",
+          "displayType": "video-grid",
+          "highlights": [
+            {
+              "title": "Community gameplay: spicy ramen kitchen tour",
+              "youtubeId": "xg6rHrxEBpc"
+            },
+            {
+              "title": "Community walkthrough: first bowl to topping tower",
+              "youtubeId": "tzZJbypdGCk"
+            },
+            {
+              "title": "Community quick look: cooking and recording",
+              "youtubeId": "Vx3wwq6LKew"
             }
           ]
         }

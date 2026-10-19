@@ -20,6 +20,7 @@
 import { Icon } from 'astro-icon/components';
 import LocaleLayout from '~/components/layout/LocaleLayout.astro';
 import VideoSection from '~/components/home/VideoSection.astro';
+import Gallery from '~/components/home/Gallery.astro';
 import QuickStart from '~/components/home/QuickStart.astro';
 import ExploreModules from '~/components/home/ExploreModules.astro';
 import { site } from '~/config/site';
@@ -64,6 +65,7 @@ const start: HomeUi['start'] = home.start;
 const popular: HomeUi['popular'] = home.popular;
 const explore: HomeUi['explore'] = home.explore;
 const closingCta: HomeUi['closingCta'] = home.closingCta;
+const gallery: HomeUi['gallery'] = home.gallery;
 
 // QuickLink may be a string or { label, href } — normalize for the sidebar list.
 type QuickLink = string | { label: string; href: string };
@@ -85,6 +87,28 @@ function trendingLabel(link: QuickLink): string {
 >
   {/* ─────────────────────────────── Hero ─────────────────────────────── */}
   <section class="relative flex min-h-[52vh] items-center overflow-hidden border-b border-border md:min-h-[68vh]">
+    {/* Cinematic photo backdrop — only renders when `home.hero.image` is set.
+        A theme-aware background wash (`bg-background/70`) keeps the hero text
+        legible in both color modes, and a bottom gradient blends the photo
+        into the page. */}
+    {
+      hero.image && (
+        <div aria-hidden="true" class="absolute inset-0">
+          <img
+            src={hero.image}
+            alt=""
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            width="1200"
+            height="630"
+            class="h-full w-full object-cover"
+          />
+          <div class="absolute inset-0 bg-background/70" />
+          <div class="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background" />
+        </div>
+      )
+    }
     {/* Subtle theme-color gradient backdrop — gives the hero a visual anchor
         without requiring an image asset. Sits behind the watermark. */}
     <div
@@ -132,9 +156,24 @@ function trendingLabel(link: QuickLink): string {
     </div>
   </section>
 
-  {/* Trailer — only renders when a videoId is configured. */}
+  {/* Trailer — only renders when a videoId is configured. `hero.videoTitle`
+      optionally overrides the default "<game> trailer" label (a community
+      gameplay upload is not a trailer, so the config layer can say so). */}
   {hero.videoId && (
-    <VideoSection videoId={hero.videoId} title={`${site.game.name} ${shared.gameTrailer}`} />
+    <VideoSection
+      videoId={hero.videoId}
+      title={hero.videoTitle ?? `${site.game.name} ${shared.gameTrailer}`}
+    />
+  )}
+
+  {/* Gallery — screenshot strip, renders nothing while items is empty. */}
+  {gallery.items.length > 0 && (
+    <Gallery
+      badge={gallery.badge}
+      title={gallery.title}
+      description={gallery.description}
+      items={gallery.items}
+    />
   )}
 
   {/* ───────────────────────────── Quick Start ────────────────────────── */}
