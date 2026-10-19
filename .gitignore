@@ -9,6 +9,8 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+dist/
+node_modules/
 pnpm-debug.log*
 
 # environment variables
@@ -50,3 +52,5 @@ reports/
 
 # anvil-ops site-local ops data (metrics --import-aio --save CSV archives) — never swept into a submit PR
 ops/
+.pnpm-store/
+dev-server.log

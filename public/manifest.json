@@ -1,11 +1,11 @@
 {
-  "name": "Anvil Quest Wiki",
-  "short_name": "AQ Wiki",
-  "description": "Complete Anvil Quest wiki with boss guides, codes, and tier lists.",
+  "name": "Make Ramen To Get Rich Wiki",
+  "short_name": "Ramen Wiki",
+  "description": "All Make Ramen To Get Rich codes, beginner cooking progression, and tips to become a rich Mukbanger. Every page shows the date it was last verified.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#f36716",
+  "theme_color": "#e2572c",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
